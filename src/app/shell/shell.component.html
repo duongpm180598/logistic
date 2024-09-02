@@ -6,4 +6,6 @@
         <router-outlet></router-outlet>
     </main>
     <app-footer></app-footer>
+    <a class="scroll-top d-flex align-items-center justify-content-center" [ngClass]="{active: windowScrolled}" (click)="scrollToTop()"><i
+            class="fa fa-chevron-up"></i></a>
 </div>
