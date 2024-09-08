@@ -27,6 +27,8 @@
   --accent-color: #0d42ff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --black-color: #000000;
+  --primary-color: #061ab1;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -37,7 +39,7 @@
     255,
     0.6
   ); /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #061ab1; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -235,10 +237,18 @@ h6 {
   --background-color: rgba(255, 255, 255, 0);
   --heading-color: #ffffff;
   color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 20px 0;
+  background-color: var(--contrast-color);
   transition: all 0.5s;
   z-index: 997;
+}
+
+.header .header-top {
+  background-color: var(--primary-color);
+}
+
+.header .header-top,
+.header .header-nav {
+  height: 80px;
 }
 
 .header .logo {
@@ -257,36 +267,30 @@ h6 {
   color: var(--heading-color);
 }
 
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
+.header .btn-faq,
+.header .btn-faq:focus {
   color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 14px;
-  padding: 8px 25px;
+  font-size: 16px;
   margin: 0 0 0 30px;
   border-radius: 4px;
   transition: 0.3s;
+  text-decoration: none;
 }
 
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+.header .btn-faq:hover,
+.header .btn-faq:focus:hover {
+  opacity: 0.7;
 }
 
 @media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
-  }
+  //   .header .logo {
+  //     order: 1;
+  //   }
 
-  .header .btn-getstarted {
+  .header .btnbtn-faq {
     order: 2;
     margin: 0 15px 0 0;
     padding: 6px 15px;
-  }
-
-  .header .navmenu {
-    order: 3;
   }
 }
 
@@ -308,14 +312,17 @@ h6 {
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
+    background-color: var(--contrast-color);
   }
 
   .navmenu ul {
     margin: 0;
     padding: 0;
+    padding-top: 28px;
     display: flex;
     list-style: none;
     align-items: center;
+    justify-content: space-between;
   }
 
   .navmenu li {
@@ -324,8 +331,8 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
-    padding: 18px 15px;
+    color: var(--black-color);
+    // padding: 18px 15px;
     font-size: 16px;
     font-family: var(--nav-font);
     font-weight: 400;
@@ -413,6 +420,13 @@ h6 {
 
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
+  .header .header-top {
+    height: 80px;
+    padding: 0 40px;
+  }
+  .header .header-nav {
+    display: none;
+  }
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
@@ -445,7 +459,7 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-dropdown-color);
-    padding: 10px 20px;
+    // padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
     font-weight: 500;
@@ -887,7 +901,10 @@ section,
   width: 100%;
   min-height: 50vh;
   position: relative;
-  padding: 120px 0 60px 0;
+  padding: 200px 0 60px 0;
+  @media (max-width: 1199px) {
+    padding: 120px 0 60px 0;
+  }
 }
 
 .hero .hero-bg {
@@ -923,38 +940,40 @@ section,
   font-weight: 400;
   margin-bottom: 40px;
 }
-
-.hero form {
-  background: color-mix(in srgb, var(--default-color) 5%, white 90%);
-  padding: 10px;
+.form-search {
+    z-index: 999;
+    position: relative;
+}
+.form-search .row {
+    margin-top: -80px;
+}
+.form-search form {
+  padding: 20px;
   border-radius: 10px;
+  background-color: var(--contrast-color);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  //   background: color-mix(in srgb, var(--default-color) 5%, white 90%);
+}
+.form-search form p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--black-color);
 }
 
-.hero form .form-control {
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: none;
+.form-search .form-control {
   margin-right: 10px;
-  border: none !important;
   background: none !important;
 }
 
-.hero form .form-control:hover,
-.hero form .form-control:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.hero form .btn-primary {
+.form-search .btn-primary {
   color: var(--contrast-color);
   background-color: var(--accent-color);
   flex-shrink: 0;
-  padding: 0 25px;
+  padding: 0 10px;
 }
 
-.hero form .btn-primary:hover {
+.form-search .btn-primary:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
@@ -994,59 +1013,53 @@ section,
 }
 
 /*--------------------------------------------------------------
-    # Featured Services Section
+    # Featured Top shipping Section
     --------------------------------------------------------------*/
-.featured-services .service-item {
-  position: relative;
-  height: 100%;
-  margin-bottom: 30px;
+.top-shipping {
+  margin-top: 60px;
+  text-align: center;
+  color: var(--contrast-color);
+  background-color: var(--primary-color);
+  padding-top: 70px;
+  padding-bottom: 80px;
 }
 
-.featured-services .service-item .icon {
-  margin-right: 20px;
+.top-shipping h2 {
+  font-weight: 600;
+}
+.top-shipping .link {
+  margin-top: 30px;
 }
 
-.featured-services .service-item .icon i {
-  color: var(--accent-color);
-  font-size: 40px;
-  transition: 0.3s;
-}
-
-.featured-services .service-item:hover .icon i {
-  color: var(--accent-color);
-}
-
-.featured-services .service-item .title {
-  color: var(--heading-color);
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 20px;
-  transition: 0.3s;
-}
-
-.featured-services .service-item .description {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin-bottom: 10px;
-}
-
-.featured-services .service-item .readmore {
-  display: flex;
-  align-items: center;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  transition: 0.3s;
-  font-weight: 700;
+.top-shipping .btn-top-shipping {
+  padding: 1rem;
+  min-width: 180px;
+  display: inline-block;
+  border-radius: 80px;
+  text-decoration: none;
+  border: 1px solid;
+  cursor: pointer;
   font-size: 14px;
 }
-
-.featured-services .service-item .readmore i {
-  margin-left: 8px;
+.btn-primary {
+  color: #000 !important;
+  background-color: #ffd100 !important;
+  border-color: #ffd100 !important;
+  box-shadow: none;
 }
-
-.featured-services .service-item:hover .title,
-.featured-services .service-item:hover .readmore,
-.featured-services .service-item:hover .icon i {
-  color: var(--accent-color);
+.btn-primary:hover {
+  background-color: #d6af00 !important;
+  border-color: #d6af00 !important;
+}
+.btn-secondary {
+  color: var(--contrast-color) !important;
+  background-color: var(--primary-color) !important;
+  border-color: var(--contrast-color) !important;
+  box-shadow: none;
+}
+.btn-secondary:hover {
+  color: var(--black-color) !important;
+  background-color: var(--contrast-color) !important;
 }
 
 /*--------------------------------------------------------------
@@ -1143,437 +1156,4 @@ section,
 
 .services .card:hover .card-img img {
   transform: scale(1.1);
-}
-
-/*--------------------------------------------------------------
-    # Features Section
-    --------------------------------------------------------------*/
-.features .features-item {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.features .features-item + .features-item {
-  margin-top: 100px;
-}
-
-@media (max-width: 640px) {
-  .features .features-item + .features-item {
-    margin-top: 40px;
-  }
-}
-
-.features .features-item h3 {
-  font-weight: 700;
-  font-size: 26px;
-}
-
-.features .features-item ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features .features-item ul li {
-  padding-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.features .features-item ul li:last-child {
-  padding-bottom: 0;
-}
-
-.features .features-item ul i {
-  font-size: 20px;
-  padding-right: 4px;
-  color: var(--accent-color);
-}
-
-.features .features-item p:last-child {
-  margin-bottom: 0;
-}
-
-/*--------------------------------------------------------------
-    # Pricing Section
-    --------------------------------------------------------------*/
-.pricing .pricing-item {
-  background-color: var(--surface-color);
-  box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
-  border-top: 4px solid var(--background-color);
-  padding: 60px 40px;
-  height: 100%;
-  border-radius: 5px;
-}
-
-.pricing h3 {
-  font-weight: 600;
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.pricing h4 {
-  color: var(--accent-color);
-  font-size: 48px;
-  font-weight: 400;
-  font-family: var(--heading-font);
-  margin-bottom: 0;
-}
-
-.pricing h4 sup {
-  font-size: 28px;
-}
-
-.pricing h4 span {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 18px;
-}
-
-.pricing ul {
-  padding: 20px 0;
-  list-style: none;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  text-align: left;
-  line-height: 20px;
-}
-
-.pricing ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.pricing ul i {
-  color: #059652;
-  font-size: 24px;
-  padding-right: 3px;
-}
-
-.pricing ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.pricing ul .na i {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.pricing ul .na span {
-  text-decoration: line-through;
-}
-
-.pricing .buy-btn {
-  color: var(--accent-color);
-  display: inline-block;
-  padding: 8px 35px 10px 35px;
-  border-radius: 50px;
-  transition: none;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: var(--heading-font);
-  transition: 0.3s;
-  border: 1px solid var(--accent-color);
-}
-
-.pricing .buy-btn:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.pricing .featured {
-  border-top-color: var(--accent-color);
-}
-
-.pricing .featured .buy-btn {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-@media (max-width: 992px) {
-  .pricing .box {
-    max-width: 60%;
-    margin: 0 auto 30px auto;
-  }
-}
-
-@media (max-width: 767px) {
-  .pricing .box {
-    max-width: 80%;
-    margin: 0 auto 30px auto;
-  }
-}
-
-@media (max-width: 420px) {
-  .pricing .box {
-    max-width: 100%;
-    margin: 0 auto 30px auto;
-  }
-}
-
-/*--------------------------------------------------------------
-    # Alt Pricing Section
-    --------------------------------------------------------------*/
-.alt-pricing .pricing-item {
-  background-color: var(--surface-color);
-  box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
-  padding-bottom: 30px;
-  position: relative;
-}
-
-.alt-pricing .pricing-item h3 {
-  font-weight: 700;
-  margin-bottom: 0;
-  font-size: 24px;
-}
-
-.alt-pricing .pricing-item h4 {
-  font-size: 48px;
-  color: var(--accent-color);
-  font-weight: 400;
-  font-family: var(--heading-font);
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.alt-pricing .pricing-item h4 sup {
-  font-size: 28px;
-}
-
-.alt-pricing .pricing-item h4 span {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  font-size: 18px;
-}
-
-.alt-pricing .pricing-item ul {
-  padding: 20px 0;
-  list-style: none;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  text-align: left;
-  line-height: 20px;
-}
-
-.alt-pricing .pricing-item ul li {
-  padding-top: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.alt-pricing .pricing-item ul i {
-  color: #059652;
-  font-size: 24px;
-  padding-right: 3px;
-}
-
-.alt-pricing .pricing-item ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.alt-pricing .pricing-item ul .na i {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.alt-pricing .pricing-item ul .na span {
-  text-decoration: line-through;
-}
-
-.alt-pricing .buy-btn {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-  border: 2px solid var(--accent-color);
-  display: inline-block;
-  padding: 12px 40px;
-  border-radius: 4px;
-  transition: none;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s;
-  font-family: var(--heading-font);
-}
-
-.alt-pricing .buy-btn:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-.alt-pricing .featured {
-  background: var(--accent-color);
-}
-
-.alt-pricing .featured h3,
-.alt-pricing .featured h4,
-.alt-pricing .featured h4 span,
-.alt-pricing .featured ul,
-.alt-pricing .featured ul .na,
-.alt-pricing .featured ul i,
-.alt-pricing .featured ul .na i {
-  color: var(--contrast-color);
-}
-
-.alt-pricing .featured .buy-btn {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: var(--contrast-color);
-}
-
-.alt-pricing .featured .buy-btn:hover {
-  background: color-mix(in srgb, var(--accent-color) 90%, black 15%);
-  color: var(--contrast-color);
-}
-
-/*--------------------------------------------------------------
-    # Contact Section
-    --------------------------------------------------------------*/
-.contact .info-item + .info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  font-size: 20px;
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type="text"],
-.contact .php-email-form input[type="email"],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(
-    in srgb,
-    var(--background-color),
-    transparent 50%
-  );
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type="text"]:focus,
-.contact .php-email-form input[type="email"]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type="text"]::placeholder,
-.contact .php-email-form input[type="email"]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type="submit"] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type="submit"]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-/*--------------------------------------------------------------
-    # Get A Quote Section
-    --------------------------------------------------------------*/
-.get-a-quote .quote-bg {
-  min-height: 500px;
-  background-size: cover;
-  background-position: center;
-}
-
-.get-a-quote .php-email-form {
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
-  padding: 30px;
-  height: 100%;
-}
-
-@media (max-width: 575px) {
-  .get-a-quote .php-email-form {
-    padding: 20px;
-  }
-}
-
-.get-a-quote .php-email-form h3 {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.get-a-quote .php-email-form h4 {
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 20px 0 0 0;
-}
-
-.get-a-quote .php-email-form p {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.get-a-quote .php-email-form input[type="text"],
-.get-a-quote .php-email-form input[type="email"],
-.get-a-quote .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(
-    in srgb,
-    var(--background-color),
-    transparent 20%
-  );
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.get-a-quote .php-email-form input[type="text"]:focus,
-.get-a-quote .php-email-form input[type="email"]:focus,
-.get-a-quote .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.get-a-quote .php-email-form input[type="text"]::placeholder,
-.get-a-quote .php-email-form input[type="email"]::placeholder,
-.get-a-quote .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.get-a-quote .php-email-form button[type="submit"] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.get-a-quote .php-email-form button[type="submit"]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }

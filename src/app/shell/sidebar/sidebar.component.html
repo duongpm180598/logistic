@@ -1,1 +1,21 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+    <div class="d-flex">
+        <a class="btn-faq" href="#">FAQ</a>
+    </div>
+
+    <ul class="subnav p-0">
+        <ng-container *ngTemplateOutlet="recursiveMenu; context: { menus: menus }"></ng-container>
+    </ul>
+    <ng-template #recursiveMenu let-menus="menus">
+        <li *ngFor="let menu of menus" [ngClass]="{ root: menu.root }">
+            <div class="menu-item">
+                <a (click)="toggleMenu(menu)" [routerLink]="menu.link">{{ menu.label }}</a>
+                <span *ngIf="menu.root && menu.children && menu.children.length > 0" class="chevron"
+                    [ngClass]="{ expand: menu.isOpen }" (click)="toggleMenu(menu)"></span>
+            </div>
+            <ul class="subnav" *ngIf="menu.root ? menu.children && menu.isOpen : menu.children">
+                <ng-container *ngTemplateOutlet="recursiveMenu; context: { menus: menu.children }"></ng-container>
+            </ul>
+        </li>
+    </ng-template>
+</div>

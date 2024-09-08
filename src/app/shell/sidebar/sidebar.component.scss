@@ -1,0 +1,37 @@
+.sidebar {
+  height: calc(100dvh - 80px);
+  .subnav {
+    padding-left: 10px;
+    list-style-type: none;
+    .root {
+      border-bottom: 1px solid #ccc;
+    }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 22px 10px 40px;
+      .chevron {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        background-image: url("../../assets/images/chevron-down.svg");
+        transform: rotate(0deg);
+        transition: all 0.1s ease-in-out;
+        &.expand {
+          margin-top: 5px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    li a {
+      font-size: 20px;
+      color: #000000;
+      text-decoration: none;
+      transition: all 0.1s ease-in-out;
+      &:hover {
+        color: #061ab1;
+      }
+    }
+  }
+}

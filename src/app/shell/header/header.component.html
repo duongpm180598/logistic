@@ -1,18 +1,24 @@
-<header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
+<header id="header" class="header fixed-top">
+    <div class="header-top container-fluid position-relative d-flex align-items-center">
+        <a routerLink="/" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">Logis</h1>
+            <h1 class="sitename">Logistic</h1>
         </a>
-
-        <nav id="navmenu" class="navmenu">
+        <a class="btn-faq" href="#">FAQ</a>
+        <div class="bars clickable-bar" (click)="toggleSidebar()">
+            <span class="bar-1"></span>
+            <span class="bar-2"></span>
+            <span class="bar-3"></span>
+        </div>
+    </div>
+    <nav id="navmenu" class="header-nav navmenu">
+        <div class="container-fluid position-relative">
             <ul>
-                <li><a href="index.html" class="active">Home<br></a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="#" class="active">Home<br></a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Pricing</a></li>
                 <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
@@ -35,9 +41,7 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-
-        <a class="btn-getstarted" href="get-a-quote.html">Get a Quote</a>
-
-    </div>
+        </div>
+    </nav>
+    <app-sidebar *ngIf="toggle"></app-sidebar>
 </header>

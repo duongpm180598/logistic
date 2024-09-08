@@ -1,0 +1,46 @@
+.header {
+  @media (min-width: 1200px) {
+    .container-fluid {
+      padding: 0 200px;
+    }
+  }
+}
+
+.bars {
+  display: none;
+  position: absolute;
+  height: 13px;
+  width: 21px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.bars span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: white;
+}
+
+.bar-2,
+.bar-3 {
+  margin-top: 3px;
+}
+
+.bar-1,
+.bar-3 {
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+}
+
+@media (max-width: 1199px) {
+  .bars {
+    display: block;
+  }
+  .btn-faq {
+    display: none;
+  }
+}
