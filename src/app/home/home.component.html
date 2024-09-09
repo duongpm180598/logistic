@@ -1,7 +1,7 @@
 <!-- Hero Section -->
 <section id="hero" class="hero section dark-background">
 
-    <img src="assets/img/world-dotted-map.png" alt="" class="hero-bg">
+    <img src="src/assets/images/service-1.jpg" alt="" class="hero-bg">
 
     <div class="container">
         <div class="row gy-4 d-flex justify-content-between">
@@ -13,7 +13,7 @@
             </div>
 
             <div class="col-lg-5 order-1 order-lg-2 hero-img">
-                <img src="assets/img/hero-img.svg" class="img-fluid mb-3 mb-lg-0" alt="">
+                <img src="assets/images/service-2.jpg" class="img-fluid mb-3 mb-lg-0" alt="">
             </div>
 
         </div>
@@ -22,13 +22,13 @@
 </section><!-- /Hero Section -->
 <div class="container form-search">
     <div class="row justify-content-center">
-        <div class="col-sm-6">
+        <div class="col-sm-10 col-md-6">
             <form action="#" class="text-center mb-3">
                 <p class="font-weight-bold">Where is my parcel</p>
-                <div class="d-flex align-items-stretch">
+                <div class="input-wrapper d-flex align-items-stretch">
                     <input type="text" class="form-control" placeholder="Enter a parcel number">
                     <a routerLink="/">
-                        <img src="app/assets/images/qrcode.svg" alt="" />
+                        <img class="icon-qr" src="assets/images/qrcode.svg" alt="" />
                     </a>
                     <button type="submit" hidden></button>
                 </div>
@@ -68,6 +68,45 @@
     </div>
 </section>
 <!-- /Statistic Section -->
+
+<div class="container">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+            <div class="d-flex">
+                <div class="content-left">
+                    <div class="inner-content">
+                        <h3>Win a bundle of benefits for your business</h3>
+                        <p>Do you have your own business and send parcels? Or do you know someone in your neighborhood
+                            who
+                            deserves to be appreciated?</p>
+                        <p>Then don't hesitate and join the <b>eŽena 2024 contest</b> for free parcel shipping.</p>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <img src="assets/images/service-1.jpg" alt="" />
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide>
+            <div class="d-flex">
+                <div class="content-left">
+                    <div class="inner-content">
+                        <h3>We´re introducing solar GLS ParcelBoxes!</h3>
+                        <p>GLS is expanding its vending machine network with the new Solar range. The solar GLS
+                            ParcelBoxes
+                            with optimised energy consumption are powered exclusively by solar panels. GLS is thus
+                            responding to the ever-increasing popularity of parcel machines and customer interest in
+                            environmentally friendly parcel transport solutions.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <img src="assets/images/service-2.jpg" alt="" />
+                </div>
+            </div>
+        </ng-template>
+    </owl-carousel-o>
+</div>
 
 <!-- Services Section -->
 <section id="services" class="services section">
@@ -127,13 +166,13 @@
         <div class="container">
             <h2>Logistic Pick-up points</h2>
             <div class="row justify-content-center form-search">
-                <div class="col-sm-6">
+                <div class="col-sm-10 col-md-6">
                     <form action="#" class="text-center mb-3">
                         <p class="font-weight-bold">Find your closest Pick-up point</p>
-                        <div class="d-flex align-items-stretch">
+                        <div class="input-wrapper d-flex align-items-stretch">
                             <input type="text" class="form-control" placeholder="ZIP code or city">
                             <a routerLink="/">
-                                <img src="../../assets/images/qrcode.svg" alt="" />
+                                <img class="icon-qr" src="assets/images/qrcode.svg" alt="" />
                             </a>
                             <button type="submit" hidden></button>
                         </div>
