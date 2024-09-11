@@ -6,19 +6,23 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  customOptions: OwlOptions = {
+  defaultOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    navText: ['', ''],
     responsive: {
       0: {
         items: 1,
       },
     },
     nav: true,
+    navText: ['&#8249;', '&#8250;'],
+  };
+  serviceOptions = {
+    ...this.defaultOptions,
+    dots: true,
   };
 }

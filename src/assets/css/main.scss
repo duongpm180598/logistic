@@ -901,7 +901,7 @@ section,
   width: 100%;
   min-height: 50vh;
   position: relative;
-  padding: 200px 0 60px 0;
+  padding: 160px 0 60px 0;
   @media (max-width: 1199px) {
     padding: 120px 0 60px 0;
   }
@@ -912,7 +912,7 @@ section,
   inset: 0;
   display: block;
   width: 100%;
-  height: 100%;
+  //   height: 100%;
   object-fit: cover;
   z-index: 1;
 }
@@ -941,11 +941,11 @@ section,
   margin-bottom: 40px;
 }
 .form-search {
-    z-index: 999;
-    position: relative;
+  z-index: 999;
+  position: relative;
 }
 .form-search .row {
-    margin-top: -80px;
+  margin-top: -150px;
 }
 .form-search form {
   padding: 20px;
@@ -962,7 +962,7 @@ section,
 }
 
 .form-search .form-control {
-//   margin-right: 10px;
+  //   margin-right: 10px;
   background: none !important;
 }
 
@@ -1156,4 +1156,20 @@ section,
 
 .services .card:hover .card-img img {
   transform: scale(1.1);
+}
+.owl-theme .owl-nav [class*="owl-"] {
+  font-size: 80px !important;
+  background: none !important;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  color: #ffd100 !important;
+}
+.owl-theme .owl-nav .owl-prev {
+  left: 10px;
+}
+.owl-theme .owl-nav .owl-next {
+  right: 10px;
 }

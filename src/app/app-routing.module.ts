@@ -9,6 +9,13 @@ const routes: Routes = [
       loadChildren: () =>
         import('./home/home.module').then((m) => m.HomeModule),
     },
+    {
+      path: 'scan-packages',
+      loadChildren: () =>
+        import('./scan-packages/scan-packages.module').then(
+          (m) => m.ScanPackagesModule
+        ),
+    },
   ]),
   // Fallback when no prior route is matched
   { path: '**', redirectTo: '/', pathMatch: 'full' },
