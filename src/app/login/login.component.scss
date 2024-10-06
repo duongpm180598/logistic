@@ -1,0 +1,28 @@
+.inline-loader {
+  display: inline-block;
+}
+
+.login-container {
+  width: 100%;
+  background: #f2f2f2;
+  //   background-image: url("../../assets/image/bg.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: cover, cover;
+}
+
+.login {
+  min-height: 100vh;
+}
+
+.login-content {
+  width: 580px;
+  max-width: 580px;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.login-heading {
+  font-weight: 600;
+}

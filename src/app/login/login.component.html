@@ -1,0 +1,48 @@
+<div class="login-container">
+    <div class="login d-flex align-items-center">
+        <div class="mx-auto login-content">
+            <h2>
+                Logistic
+            </h2>
+            <h4 class="login-heading mb-4">Đăng nhập hệ thống</h4>
+
+            <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+                <div class="login-error mb-3" [hidden]="!error || isLoading">Tên đăng nhập hoặc mật khẩu không đúng.
+                </div>
+                <div class="form-floating mb-1">
+                    <mat-form-field class="w-100" appearance="outline" [hideRequiredMarker]="true">
+                        <mat-label>Tên đăng nhập</mat-label>
+                        <input type="text" matInput formControlName="username" autocomplete="username" required />
+                        <mat-error
+                            *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+                            <span>Tên đăng nhập là bắt buộc</span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-floating mb-1">
+                    <mat-form-field class="w-100" appearance="outline" [hideRequiredMarker]="true">
+                        <mat-label>Mật khẩu</mat-label>
+                        <input type="password" matInput formControlName="password" autocomplete="current-password"
+                            required />
+                        <mat-error
+                            *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                            <span>Mật khẩu là bắt buộc</span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="mb-2">
+                    <mat-checkbox color="primary" formControlName="remember"> Nhớ đăng nhập </mat-checkbox>
+                </div>
+
+                <div class="d-flex">
+                    <button class="w-100" mat-raised-button color="primary" type="submit"
+                        [disabled]="loginForm.invalid || isLoading">
+                        <!-- <app-loader class="inline-loader" [isLoading]="isLoading"></app-loader> -->
+                        <span>Đăng nhập</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

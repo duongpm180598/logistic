@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { Shell } from './shell/shell.service';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+  },
   Shell.childRoutes([
     {
       path: '',
       loadChildren: () =>
-        import('./home/home.module').then((m) => m.HomeModule),
+        import('./pages/pages.module').then((m) => m.PagesModule),
     },
     {
       path: 'scan-packages',

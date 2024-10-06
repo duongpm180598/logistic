@@ -8,6 +8,10 @@ LOAD_WASM().subscribe();
 
 @NgModule({
   declarations: [ScanPackagesComponent],
-  imports: [CommonModule, ScanPackagesRoutingModule, NgxScannerQrcodeModule],
+  imports: [
+    CommonModule,
+    ScanPackagesRoutingModule,
+    NgxScannerQrcodeModule,
+  ],
 })
 export class ScanPackagesModule {}
