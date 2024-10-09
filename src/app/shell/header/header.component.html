@@ -5,7 +5,15 @@
             <!-- <img src="assets/img/logo.png" alt=""> -->
             <h1 class="sitename">Logistic</h1>
         </a>
-        <a class="btn-faq" routerLink="/faq">FAQ</a>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a routerLink="/">Home<br></a></li>
+                <li><a routerLink="/blog">Blog</a></li>
+                <!-- <li><a href="services.html" class="active">Services</a></li> -->
+                <li><a routerLink="/faq">FAQ</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
         <a class="btn-faq" routerLink="/login">Login</a>
         <div class="bars clickable-bar" (click)="toggleSidebar()">
             <span class="bar-1"></span>
@@ -13,7 +21,7 @@
             <span class="bar-3"></span>
         </div>
     </div>
-    <nav id="navmenu" class="header-nav navmenu">
+    <!-- <nav id="navmenu" class="header-nav navmenu">
         <div class="container-fluid position-relative">
             <ul>
                 <li><a href="#" class="active">Home<br></a></li>
@@ -43,6 +51,6 @@
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </div>
-    </nav>
+    </nav> -->
     <app-sidebar *ngIf="toggle"></app-sidebar>
 </header>
