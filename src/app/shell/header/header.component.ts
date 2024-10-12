@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '@app/@shared/services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   toggle = false;
+
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {}
 
   toggleSidebar(): void {
     let barOne = document.querySelector('.bar-1') as HTMLElement;
@@ -25,5 +32,11 @@ export class HeaderComponent {
       barThree.removeAttribute('style');
       this.toggle = false;
     }
+  }
+
+  logout(): void {
+    this.authenticationService
+      .logout()
+      .subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
   }
 }

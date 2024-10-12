@@ -5,9 +5,17 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BlogComponent } from './blog/blog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PackInfoComponent } from './pack-info/pack-info.component';
 
 @NgModule({
-  declarations: [FaqComponent, HomeComponent, BlogComponent],
-  imports: [CommonModule, CarouselModule, PagesRoutingModule],
+  declarations: [FaqComponent, HomeComponent, BlogComponent, PackInfoComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CarouselModule,
+    PagesRoutingModule,
+  ],
 })
 export class PagesModule {}

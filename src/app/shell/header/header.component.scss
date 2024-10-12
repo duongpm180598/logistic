@@ -1,6 +1,7 @@
 .header {
   @media (min-width: 1200px) {
     .container-fluid {
+      gap: 16px;
       padding: 0 200px;
     }
   }

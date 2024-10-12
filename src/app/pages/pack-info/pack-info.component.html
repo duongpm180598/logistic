@@ -1,0 +1,103 @@
+<section id="testimonials" class="testimonials section dark-background">
+    <img src="assets/images/blog/testimonials-bg.jpg" class="testimonials-bg" alt="" />
+</section>
+<section id="pack-info" class="pack-info section" *ngIf="info">
+    <div class="container">
+        <div class="item-info">
+            <div class="key">
+                Mã BK:
+            </div>
+            <div class="value">
+                {{ info.MaBK || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Người nhận:
+            </div>
+            <div class="value">
+                {{ info.NguoiNhan || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Địa chỉ:
+            </div>
+            <div class="value">
+                {{ info.DiaChi || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Số điện thoại:
+            </div>
+            <div class="value">
+                {{ info.DienThoai || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Chiều bay:
+            </div>
+            <div class="value">
+                {{ info.Chieubay || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Ngày bay:
+            </div>
+            <div class="value">
+                {{ info.NgayBay || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Số kiện:
+            </div>
+            <div class="value">
+                {{ info.SoKien || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Trọng lượng:
+            </div>
+            <div class="value">
+                {{ info.TrongLuong || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Cước phí:
+            </div>
+            <div class="value">
+                {{ info.CuocPhi || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Bảo hiểm:
+            </div>
+            <div class="value">
+                {{ info.BaoHiem || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Phụ thu:
+            </div>
+            <div class="value">
+                {{ info.PhuThu || '-' }}
+            </div>
+        </div>
+        <div class="item-info">
+            <div class="key">
+                Tình trạng:
+            </div>
+            <div class="value">
+                {{ info.TinhTrang || '-' }}
+            </div>
+        </div>
+    </div>
+</section>
