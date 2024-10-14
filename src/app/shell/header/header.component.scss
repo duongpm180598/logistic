@@ -40,8 +40,10 @@
 @media (max-width: 1199px) {
   .bars {
     display: block;
+    right: 60px;
   }
-  .btn-faq {
+  .btn-faq,
+  .navbar-nav {
     display: none;
   }
 }
